@@ -1,0 +1,42 @@
+namespace Beverage;
+
+table Can {
+  material: string;  // Material of the can
+  recyclable: bool;  // Is it recyclable?
+}
+
+table Bottle {
+  material: string;  // Material of the bottle
+  volume_ml: int;    // Volume in milliliters
+}
+
+union Packaging {
+  Can,
+  Bottle
+}
+
+enum CocaColaType: byte {
+  Regular,
+  Diet,
+  Zero
+}
+
+enum Ingredient: byte {
+  Water,
+  Sugar,
+  CarbonDioxide,
+  Caffeine,
+  PhosphoricAcid,
+  CaramelColor,
+  NaturalFlavors
+}
+
+table CocaColaCan {
+  volume_ml: int;                // Volume in milliliters
+  height_mm: int;                // Height in millimeters
+  diameter_mm: int;              // Diameter in millimeters
+  type: CocaColaType;            // Type of Coca-Cola
+  caffeine_mg: int;              // Caffeine content in milligrams
+  ingredients: [Ingredient];     // List of ingredients
+  packaging: Packaging;          // Type of packaging
+

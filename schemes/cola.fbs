@@ -39,4 +39,5 @@ table CocaColaCan {
   caffeine_mg: int;              // Caffeine content in milligrams
   ingredients: [Ingredient];     // List of ingredients
   packaging: Packaging;          // Type of packaging
+}
 
